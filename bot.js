@@ -2,9 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const channel = new Discord.Channel();
 
-
-
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
