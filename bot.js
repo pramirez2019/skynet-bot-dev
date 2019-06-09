@@ -9,7 +9,7 @@ client.on('ready', () => {
 //client.on means the bot is listening
 client.on('message', msg => {
     var args = msg.content;
-    var ps4games = ["RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 "];
+    var ps4games = ["My games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 "];
     switch (args) {
         case '!dbd':
             msg.reply('Lets play! <:eymario:558854493567975435>');
