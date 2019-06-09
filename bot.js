@@ -1,29 +1,25 @@
-const Discord = require('discord.js');
+{
 
-const client = new Discord.Client();
+  "name": "Test",
 
- 
+  "description": "Test",
 
-client.on('ready', () => {
+  "version": "0.0.0",
 
-    console.log('I am ready!');
+  "main": "bot.js",
 
-});
+  "scripts": {
 
- 
+    "start": "node bot.js"
 
-client.on('message', message => {
+  },
 
-    if (message.content === 'ping') {
+  "dependencies": {
 
-       message.reply('pong');
+    "discord.js": "11.1.0",
 
-       }
+    "request": "2.81.0"
 
-});
+  }
 
- 
-
-// THIS  MUST  BE  THIS  WAY
-
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+}
