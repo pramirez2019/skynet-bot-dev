@@ -11,8 +11,8 @@ client.on('ready', () => {
 client.on('message', msg => {
     var args = msg.content;
     var ps4games = ["My PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
-    var pcgames = [" Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
-    var switchgames = [" Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
+    var pcgames = ["My PC games: Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
+    var switchgames = [" My Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
     
     switch (args) {
         case '!dbd':
@@ -25,10 +25,10 @@ client.on('message', msg => {
             msg.reply(ps4games.toString()+":joystick:");
             break;
         case '!pcgames':
-            msg.reply(ps4games.toString() + ":joystick:");
+            msg.reply(pcgames.toString() + ":joystick:");
             break;
         case '!switchgames':
-            msg.reply(ps4games.toString() + ":joystick:");
+            msg.reply(switchgames.toString() + ":joystick:");
             break;
         case '!ping':
             msg.channel.send('pong dev');
