@@ -20,8 +20,8 @@ client.on('message', msg => {
         case '!ps4games':
             msg.reply(ps4games.toString()+":joystick:");
             break;
-        case '!pong':
-            msg.channel.send('pong');
+        case '!ping':
+            msg.channel.send('pong dev');
             break;
         case '!delete':
             msg.channel.delete();
