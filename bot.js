@@ -1,3 +1,4 @@
+//THIS IS TEST
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const channel = new Discord.Channel();
