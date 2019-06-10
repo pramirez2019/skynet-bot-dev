@@ -10,16 +10,25 @@ client.on('ready', () => {
 //client.on means the bot is listening
 client.on('message', msg => {
     var args = msg.content;
-    var ps4games = ["My PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 "];
+    var ps4games = ["My PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
+    var pcgames = [" Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
+    var switchgames = [" Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
+    
     switch (args) {
         case '!dbd':
             msg.reply('Lets play! <:eymario:558854493567975435>');
         break;
-        case '!gamesid':
+        case '!gamertags':
             msg.reply('PSN:patricio_tv, steam: reloadedantrax <:eymario:558854493567975435>');
             break;
         case '!ps4games':
             msg.reply(ps4games.toString()+":joystick:");
+            break;
+        case '!pcgames':
+            msg.reply(ps4games.toString() + ":joystick:");
+            break;
+        case '!switchgames':
+            msg.reply(ps4games.toString() + ":joystick:");
             break;
         case '!ping':
             msg.channel.send('pong dev');
@@ -29,18 +38,28 @@ client.on('message', msg => {
             break;
         case '!bulk':
             msg.channel.bulkDelete(50)
-                .then(message => console.log(`Bulk deleted ${message.size} messages`))
-                .catch(console.error);
+            .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
+            .catch(console.error);
        break;
        case '!user':
             msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
             break;
        case '!server':
-            msg.channel.send(`This server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+            msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
        break;
        case '!helpmeskynet':
-            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!gamesid' - Patricio_tv gamer ids\n!ps4games - Patricio's games\n!ping - check if the bot is listening`);
+            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!gamertags' - Patricio_tv gamer ids\n!ps4games - Patricio's games\n!ping - check if the bot is listening`);
        break;
+       case '!botinvite':
+	          client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+              .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
+              .catch(console.error);
+            break;
+        case '!invite':
+            client.fetchInvite('https://discord.gg/5FTJFDt')
+                .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
+                .catch(console.error);
+        break;
     }
 })
  
