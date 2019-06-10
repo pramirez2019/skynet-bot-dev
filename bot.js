@@ -38,8 +38,8 @@ client.on('message', msg => {
             msg.channel.send(`This server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
        break;
        case '!helpmeskynet':
-            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!gamesid' - Patricio_tv gamer ids
-            !ps4games - Patricio's games\n!ping - check if the bot is listening`);
+            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!gamesid' - Patricio_tv gamer ids\n
+        !ps4games - Patricio's games\n!ping - check if the bot is listening`);
        break;
     }
 })
