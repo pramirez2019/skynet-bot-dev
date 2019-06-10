@@ -10,9 +10,9 @@ client.on('ready', () => {
 //client.on means the bot is listening
 client.on('message', msg => {
     var args = msg.content;
-    var ps4games = ["My PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
-    var pcgames = ["My PC games: Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
-    var switchgames = [" My Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
+    var ps4games = ["Patricio's PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
+    var pcgames = ["Patricio's PC games: Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
+    var switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
     
     switch (args) {
         case '!dbd':
