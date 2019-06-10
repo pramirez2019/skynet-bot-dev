@@ -19,7 +19,7 @@ client.on('message', msg => {
             msg.reply('Lets play! <:eymario:558854493567975435>');
         break;
         case '!gamertags':
-             msg.reply('PSN:patricio_tv\n, steam: reloadedantrax\n, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
+             msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
             break;
         case '!ps4games':
             msg.reply(ps4games.toString()+":joystick:");
