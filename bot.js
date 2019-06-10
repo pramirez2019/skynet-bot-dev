@@ -48,7 +48,7 @@ client.on('message', msg => {
             msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
        break;
        case '!helpmeskynet':
-            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!!gamertags' - Patricio_tv gamer ids
+            msg.channel.send(`Human here commands for you:\n\n!dbd - Confirm to play Day by daylight\n!gamertags' - Patricio_tv gamer ids
 !ps4games - Patricio's PS4 games\n!pcgames - Patricio's PC games\n!switchgames - Patricio's PC games\n!ping - check if the bot is listening\n!invite - Discord server invitation\n!helpmeskynet - Skynet bot help`);
        break;
        case '!botinvite':
