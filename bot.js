@@ -1,5 +1,5 @@
 //THIS IS TEST
-const config = require('./config.json');
+const config = require('./config.json'); //configuration files come in for storing static data that can be easily updated in a single place
 const Discord = require('discord.js'); // require the discord.js module
 const client = new Discord.Client(); // create a new Discord client
 const channel = new Discord.Channel();
