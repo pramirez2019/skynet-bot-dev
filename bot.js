@@ -1,4 +1,5 @@
 //THIS IS TEST
+const config = require('./config.json');
 const Discord = require('discord.js'); // require the discord.js module
 const client = new Discord.Client(); // create a new Discord client
 const channel = new Discord.Channel();
