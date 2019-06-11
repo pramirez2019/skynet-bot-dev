@@ -20,7 +20,7 @@ client.on('message', msg => {
     
     switch (args) {
         case '!dbd':
-            msg.reply(${prefix}'Lets play! <:eymario:558854493567975435>');
+            msg.reply('Lets play! <:eymario:558854493567975435>');
         break;
         case '!gamertags':
              msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
@@ -63,7 +63,7 @@ client.on('message', msg => {
             break;
         case '!invite':
             client.fetchInvite('https://discord.gg/5FTJFDt')
-                .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
+                .then(invite => msg.channel.send(`${prefix}Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
                 .catch(console.error);
         break;
     }
