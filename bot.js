@@ -3,6 +3,8 @@ const Discord = require('discord.js'); // require the discord.js module
 const client = new Discord.Client(); // create a new Discord client
 const channel = new Discord.Channel();
 
+// when the client is ready, run this code
+// this event will only trigger one time after logging in
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
