@@ -19,7 +19,7 @@ client.on('message', msg => {
     var switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
     
     switch (args) {
-        case '${prefix}dbd':
+        case '${prefix}"dbd"':
             msg.reply('Lets play! <:eymario:558854493567975435>');
         break;
         case '!gamertags':
