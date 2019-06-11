@@ -4,7 +4,7 @@ const client = new Discord.Client(); // create a new Discord client
 const channel = new Discord.Channel();
 
 // when the client is ready, run this code
-// this event will only trigger one time after logging in
+// this event "on" will multiple times after logging in. client.once to trigger one time
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
