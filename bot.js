@@ -61,9 +61,9 @@ client.on('message', msg => {
               .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
               .catch(console.error);
             break;
-        case '!invite':
+        case `${prefix}invite`:
             client.fetchInvite('https://discord.gg/5FTJFDt')
-                .then(invite => msg.channel.send(`${prefix}Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
+                .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
                 .catch(console.error);
         break;
     }
