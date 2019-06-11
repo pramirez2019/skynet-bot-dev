@@ -13,10 +13,41 @@ client.on('ready', () => {
 
 //client.on means the bot is listening
 client.on('message', msg => {
-    var args = msg.content;
-    var ps4games = ["Patricio's PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
-    var pcgames = ["Patricio's PC games: Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
-    var switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
+    let args = msg.content.slice(prefix.length).split(/ +/); //Slices off the prefix entirely and then splits it into an array by spaces. / +/ to avoid issues with spaces
+    const command = args.shift().toLowerCase(); //Variable by calling args.shift(), which will take the first element in array and return it while also removing it from the original array(so that you dont have the command name string inside the args array).
+    let ps4games = ["Patricio's PS4 games: RB6 Siege ", " Dead by daylight ", " Overwatch ", " MK11 ", " MK10 ", "and more"];
+    let pcgames = ["Patricio's PC games: Dead by daylight ", " Overwatch ", " Dragon Ball figther Z ", " Hollow knight ", "and more"];
+    let switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
+
+    if (!msg.content.startsWith(prefix) || !msg.author.bot) {  // ||or && and ! not
+       
+            if (command === 'skynet-info') {  //Command variable only have the word 'arg-info' because we shift.
+              if (!args.length) {  //args  variable only have the word ! because we split
+                  return msg.channel.send(`Please provide any arguments... ${msg.author}!`);
+              } else if (args[0] === 'dbd') {
+                  return msg.channel.send('Command name: !dbd\nArguments: play, lup, ping');
+              }
+                msg.channel.send(`This argument is incorrect for skynet-info command, try again human: ${args[0]}`);
+            }
+      
+           if (command === 'dbd') {  //Command variable only have the word 'arg-info' because we shift.
+              if (!args.length) {  //args  variable only have the word ! because we split
+                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+              } else if (args[0] === 'play') {
+                 return msg.reply('Lets play! <:eymario:558854493567975435>');
+              } else if (args[0] === 'lup') {
+                return msg.channel.send(`You leveled up, hype!!! ${msg.author}!`);
+              } else if (args[0] === 'ping' ) {
+                  const taggedUser = msg.mentions.users.first();
+                  if (!msg.mentions.users.size) {
+                    return msg.reply('you need to tag a user in order to kick them!');
+                   }
+                  return msg.channel.send(`Do you want to play some rounds? ${taggedUser.username}`);
+            }
+               msg.channel.send(`This argument is incorrect for dbd command, try again human: ${args[0]}`);
+           }
+    }
+	
     
     switch (args) {
         case '!gamertags':
