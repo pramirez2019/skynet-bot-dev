@@ -20,7 +20,7 @@ client.on('message', msg => {
     
     switch (args) {
         case '!dbd':
-            msg.reply('${prefix}Lets play! <:eymario:558854493567975435>');
+            msg.reply(${prefix}'Lets play! <:eymario:558854493567975435>');
         break;
         case '!gamertags':
              msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
