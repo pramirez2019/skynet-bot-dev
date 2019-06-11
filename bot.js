@@ -19,9 +19,6 @@ client.on('message', msg => {
     var switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
     
     switch (args) {
-        case `${prefix}dbd`: //Using prefixes for first time
-            msg.reply('Lets play! <:eymario:558854493567975435>');
-        break;
         case '!gamertags':
              msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
             break;
@@ -61,7 +58,7 @@ client.on('message', msg => {
               .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
               .catch(console.error);
             break;
-        case `${prefix}invite`:
+        case `${prefix}invite`: //Using prefixes for first time
             client.fetchInvite('https://discord.gg/5FTJFDt')
                 .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
                 .catch(console.error);
