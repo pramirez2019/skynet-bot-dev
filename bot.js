@@ -109,6 +109,7 @@ client.on('message', msg => {
 //ENABLE THIS FOR WEB SERVICE ONLY!!!
 // THIS  MUST  BE  THIS  WAY
 // login to Discord with your app's token
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+//BOT_TOKEN is the token of our bot
+client.login(process.env.BOT_TOKEN);
  
 
