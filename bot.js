@@ -74,11 +74,8 @@ client.on('message', msg => {
                 .catch(console.error);
               } else if (args[0] === 'server' ) {
                    return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
-            }else if (args[0] === 'switchgames' ) {
-                   return msg.reply(switchgames.toString() + ":joystick:");                 
-            }
-		    
-               msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
+            }		    
+               msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
            }
 	    
     }
