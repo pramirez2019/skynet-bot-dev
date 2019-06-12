@@ -88,15 +88,15 @@ client.on('message', msg => {
             if (!args.length) {  
                 return msg.channel.send(`Please provide any arguments ${msg.author}!\nArguments: ping, delete, bulk, botinvite\nExample: !admin + ARGUMENT.`);
             } else if (args[0] === 'ping') {
-                msg.channel.send('Im here human, what do you need?');
+                return msg.channel.send('Im here human, what do you need?');
             } else if (args[0] === 'delete') {
-                msg.channel.delete();
+                return msg.channel.delete();
             } else if (args[0] === 'bulk') {
-                msg.channel.bulkDelete(50)
+                return msg.channel.bulkDelete(50)
                     .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
                     .catch(console.error);
             } else if (args[0] === 'botinvite') {
-                client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+                return client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
                     .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
                     .catch(console.error);
             }
@@ -105,11 +105,9 @@ client.on('message', msg => {
 
     }        
 })
- 
 //ENABLE THIS FOR WEB SERVICE ONLY!!!
 // THIS  MUST  BE  THIS  WAY
 // login to Discord with your app's token
-//BOT_TOKEN is the token of our bot
-client.login(process.env.BOT_TOKEN);
- 
+client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+
 
