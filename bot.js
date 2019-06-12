@@ -70,7 +70,7 @@ client.on('message', msg => {
                   return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
             }  else if (args[0] === 'discord') {
                client.fetchInvite('https://discord.gg/5FTJFDt');
-                invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`));
+                return invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`));
 		    //return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`);   
              } else if (args[0] === 'server' ) {
                   return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
