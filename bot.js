@@ -92,7 +92,7 @@ client.on('message', msg => {
             } else if (args[0] === 'delete') {
                 return msg.channel.delete();
             } else if (args[0] === 'bulk') {
-                     msg.channel.bulkDelete(50)
+                return msg.channel.bulkDelete(50)
                     .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
                     .catch(console.error);
             } else if (args[0] === 'botinvite') {
