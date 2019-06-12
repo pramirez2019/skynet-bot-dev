@@ -63,6 +63,24 @@ client.on('message', msg => {
                msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
            }
 	    
+	   if (command === 'info') {  //Command variable only have the word 'arg-info' because we shift.
+              if (!args.length) {  //args  variable only have the word ! because we split
+                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+              } else if (args[0] === 'user') {
+                  return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
+              } else if (args[0] === 'discord') {
+                  client.fetchInvite('https://discord.gg/5FTJFDt')
+                .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
+                .catch(console.error);
+              } else if (args[0] === 'server' ) {
+                   return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
+            }else if (args[0] === 'switchgames' ) {
+                   return msg.reply(switchgames.toString() + ":joystick:");                 
+            }
+		    
+               msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
+           }
+	    
     }
 	
     
@@ -78,12 +96,6 @@ client.on('message', msg => {
             .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
             .catch(console.error);
        break;
-       case '!user':
-            msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
-            break;
-       case '!server':
-            msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
-       break;
        case '!helpmeskynet':
             msg.channel.send(`Human here commands for you ` + ":sunglasses:" +
                 `\n\n!dbd - Let's play Day by daylight\n!server - Skynet will post server name and count members\n!gamertags - Patricio_tv gamer ids\n!ps4games - Patricio's PS4 games\n!pcgames - Patricio's PC games\n!switchgames - Patricio's PC games\n!ping - check if the bot is listening\n!invite - Discord server invitation\n!helpmeskynet - Skynet bot help`);
@@ -94,11 +106,6 @@ client.on('message', msg => {
               .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
               .catch(console.error);
             break;
-        case `${prefix}invite`: //Using prefixes for first time
-            client.fetchInvite('https://discord.gg/5FTJFDt')
-                .then(invite => msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: ${invite.code}`))
-                .catch(console.error);
-        break;
     }
 })
  
