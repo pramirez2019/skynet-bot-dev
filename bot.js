@@ -56,7 +56,10 @@ client.on('message', msg => {
                   return msg.reply(pcgames.toString() + ":joystick:");
               } else if (args[0] === 'ps4games' ) {
                    return msg.reply(ps4games.toString()+":joystick:");                   
+            }else if (args[0] === 'switchgames' ) {
+                   return msg.reply(switchgames.toString() + ":joystick:");                 
             }
+		    
                msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
            }
 	    
@@ -64,10 +67,6 @@ client.on('message', msg => {
 	
     
     switch (args) {
-        
-        case '!switchgames':
-            msg.reply(switchgames.toString() + ":joystick:");
-            break;
         case '!ping':
             msg.channel.send('pong dev');
             break;
