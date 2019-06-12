@@ -28,7 +28,13 @@ client.on('message', msg => {
         if (command === 'skynet-info') {
             //args  variable only have the word ! because we split
             if (!args.length) {  
-                return msg.channel.send(`Please provide any arguments... ${msg.author}\nArguments: dbd, tags, info\nExample: !dbd, !tags, !info`);
+                return msg.channel.send(`Please provide any arguments ${msg.author}\nArguments: dbd, tags, info\nExample: !skynet-info dbd`);
+            } else if (args[0] === 'dbd') {
+                return msg.reply('Commands available for "!dbd": play, lup, ping');
+            } else if (args[0] === 'tags') {
+                return msg.reply('Commands available for "!tags": gamertags, pcgames, switchgames');
+            } else if (args[0] === 'info') {
+                return msg.reply('Commands available for "!info": user, discord, server');
             }
             msg.channel.send(`Human this argument is incorrect for skynet-info command, try again human: ${args[0]}`);
         }
