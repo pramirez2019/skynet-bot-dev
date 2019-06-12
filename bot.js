@@ -1,15 +1,22 @@
 //THIS IS TEST
-//const config = require('./config.json'); //configuration files come in for storing static data that can be easily updated in a single place
-const {prefix} = require('./config.json');//Using prefixes({prefix})stored on config.json file
+const { prefix } = require('./config.json');//Using prefixes({prefix})stored on config.json file. configuration files come in for storing static data that can be easily updated in a single place
 const Discord = require('discord.js'); // require the discord.js module
 const client = new Discord.Client(); // create a new Discord client
+//const auth = require('./auth.json');  // Enable this for local testing
 const channel = new Discord.Channel();
 
 // when the client is ready, run this code
-// this event "on" will multiple times after logging in. client.once to trigger one time
+// this event will only trigger one time after logging in
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
+
+//ENABLE THIS FOR LOCAL TEST ONLY!!!
+//client.login(auth.token);
+
+
 
 //client.on means the bot is listening
 client.on('message', msg => {
@@ -20,92 +27,93 @@ client.on('message', msg => {
     let switchgames = ["Patricio's Nintendo games: Fallout Shelter ", " Super Smash Bros Ultimate ", " Mario Kart 8 ", " Just Dance 2019 ", "and more"];
 
     if (!msg.content.startsWith(prefix) || !msg.author.bot) {  // ||or && and ! not
-       
-            if (command === 'skynet-info') {  //Command variable only have the word 'arg-info' because we shift.
-              if (!args.length) {  //args  variable only have the word ! because we split
-                  return msg.channel.send(`Please provide any arguments... ${msg.author}!`);
-              } else if (args[0] === 'dbd') {
-                  return msg.channel.send('Command name: !dbd\nArguments: play, lup, ping');
-              }
-                msg.channel.send(`This argument is incorrect for skynet-info command, try again human: ${args[0]}`);
+        //Command variable only have the word 'skynet-info' because we shift.
+        if (command === 'skynet-info') {
+            //args  variable only have the word ! because we split
+            if (!args.length) {  
+                return msg.channel.send(`Please provide any arguments... ${msg.author}\nArguments: dbd, tags, info\nExample: !dbd, !tags, !info`);
             }
-      
-           if (command === 'dbd') {  //Command variable only have the word 'arg-info' because we shift.
-              if (!args.length) {  //args  variable only have the word ! because we split
-                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
-              } else if (args[0] === 'play') {
-                 return msg.reply('Lets play! <:eymario:558854493567975435>');
-              } else if (args[0] === 'lup') {
+            msg.channel.send(`Human this argument is incorrect for skynet-info command, try again human: ${args[0]}`);
+        }
+        //Command variable only have the word 'dbd' because we shift.
+        if (command === 'dbd') { 
+            //args  variable only have the word ! because we split
+            if (!args.length) {  
+                return msg.channel.send(`Please provide any arguments ${msg.author}!\nArguments: play, lup, ping\nExample: !dbd + ARGUMENT. `);
+            } else if (args[0] === 'play') {
+                return msg.reply('Lets play! <:eymario:558854493567975435>');
+            } else if (args[0] === 'lup') {
                 return msg.channel.send(`You leveled up, hype!!! ${msg.author}!`);
-              } else if (args[0] === 'ping' ) {
-                  const taggedUser = msg.mentions.users.first();
-                  if (!msg.mentions.users.size) {
+            } else if (args[0] === 'ping') {
+                const taggedUser = msg.mentions.users.first();
+                if (!msg.mentions.users.size) {
                     return msg.reply('you need to tag a user in order to kick them!');
-                   }
-                  return msg.channel.send(`Do you want to play some rounds? ${taggedUser.username}`);
+                }
+                return msg.channel.send(`Do you want to play some rounds? ${taggedUser.username}`);
             }
-               msg.channel.send(`This argument is incorrect for dbd command, try again human: ${args[0]}`);
-           }
-	    
-	    if (command === 'tags') {  //Command variable only have the word 'arg-info' because we shift.
-              if (!args.length) {  //args  variable only have the word ! because we split
-                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
-              } else if (args[0] === 'gamertags') {
-                  return msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
-              } else if (args[0] === 'pcgames') {
-                  return msg.reply(pcgames.toString() + ":joystick:");
-              } else if (args[0] === 'ps4games' ) {
-                   return msg.reply(ps4games.toString()+":joystick:");                   
-            }else if (args[0] === 'switchgames' ) {
-                   return msg.reply(switchgames.toString() + ":joystick:");                 
+            msg.channel.send(`This argument is incorrect for dbd command, try again human: ${args[0]}`);
+        }
+        //Command variable only have the word 'arg-info' because we shift.
+        if (command === 'tags') {
+            //args  variable only have the word ! because we split
+            if (!args.length) {  
+                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+            } else if (args[0] === 'gamertags') {
+                return msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
+            } else if (args[0] === 'pcgames') {
+                return msg.reply(pcgames.toString() + ":joystick:");
+            } else if (args[0] === 'ps4games') {
+                return msg.reply(ps4games.toString() + ":joystick:");
+            } else if (args[0] === 'switchgames') {
+                return msg.reply(switchgames.toString() + ":joystick:");
             }
-		    
-               msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
-           }
-	    
-	   if (command === 'info') {  //Command variable only have the word 'arg-info' because we shift.
-             if (!args.length) {  //args  variable only have the word ! because we split
-                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
-              } else if (args[0] === 'user') {
-                  return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
-            }  else if (args[0] === 'discord') {
-                client.fetchInvite('https://discord.gg/5FTJFDt');            
-		 return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: `);   
-             } else if (args[0] === 'server' ) {
-                  return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
-             }		    
-              msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
-          }
-	    
-    }
-	
-    
-    switch (args) {
-        case '!ping':
-            msg.channel.send('pong dev');
-            break;
-        case '!delete':
-            msg.channel.delete();
-            break;
-        case '!bulk':
-            msg.channel.bulkDelete(50)
-            .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
-            .catch(console.error);
-       break;
-       case '!helpmeskynet':
-            msg.channel.send(`Human here commands for you ` + ":sunglasses:" +
-                `\n\n!dbd - Let's play Day by daylight\n!server - Skynet will post server name and count members\n!gamertags - Patricio_tv gamer ids\n!ps4games - Patricio's PS4 games\n!pcgames - Patricio's PC games\n!switchgames - Patricio's PC games\n!ping - check if the bot is listening\n!invite - Discord server invitation\n!helpmeskynet - Skynet bot help`);
-             break;
-       break;
-       case '!botinvite':
-	          client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
-              .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
-              .catch(console.error);
-            break;
-    }
-})
- 
 
+            msg.channel.send(`This argument is incorrect for tags command, try again human: ${args[0]}`);
+        }
+        //Command variable only have the word 'arg-info' because we shift.
+        if (command === 'info') {  
+            //args  variable only have the word ! because we split
+            if (!args.length) {  
+                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+            } else if (args[0] === 'user') {
+                return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
+            } else if (args[0] === 'discord') {
+                client.fetchInvite('https://discord.gg/5FTJFDt');
+                return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: `);
+            } else if (args[0] === 'server') {
+                return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+            }
+            msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
+        }
+        //Command variable only have the word 'arg-info' because we shift.
+        if (command === 'admin') {  
+            //args  variable only have the word ! because we split
+            if (!args.length) {  
+                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+            } else if (args[0] === 'ping') {
+                msg.channel.send('Im here human, what do you need?');
+            } else if (args[0] === 'delete') {
+                msg.channel.delete();
+            } else if (args[0] === 'bulk') {
+                msg.channel.bulkDelete(50)
+                    .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
+                    .catch(console.error);
+            } else if (args[0] === 'botinvite') {
+                client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+                    .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
+                    .catch(console.error);
+            }
+            msg.channel.send(`This argument is incorrect for admin command, try again human: ${args[0]}`);
+        }
+
+    }
+        
+    
+})
+
+ENABLE THIS FOR WEB SERVICE ONLY!!!
 // THIS  MUST  BE  THIS  WAY
 // login to Discord with your app's token
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+ 
+
