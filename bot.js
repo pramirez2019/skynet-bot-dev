@@ -52,7 +52,7 @@ client.on('message', msg => {
                   return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
               } else if (args[0] === 'gamertags') {
                   return msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
-              } else if (args[0] === '!pcgames') {
+              } else if (args[0] === 'pcgames') {
                   return msg.reply(pcgames.toString() + ":joystick:");
               } else if (args[0] === 'ps4games' ) {
                    return msg.reply(ps4games.toString()+":joystick:");                   
