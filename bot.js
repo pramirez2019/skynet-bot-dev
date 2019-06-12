@@ -70,9 +70,9 @@ client.on('message', msg => {
                   return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
             }  else if (args[0] === 'discord') {
               //fetchclient.fetchInvite('https://discord.gg/5FTJFDt')
-                return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode:`);   
+                //return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode:`);   
              } else if (args[0] === 'server' ) {
-              return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
+                  return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);                 
              }		    
               msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
           }
