@@ -96,7 +96,7 @@ client.on('message', msg => {
                     .then(message => msg.channel.send(`Bulk deleted ${message.size} messages`))
                     .catch(console.error);
             } else if (args[0] === 'botinvite') {
-                return client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+                     client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
                     .then(link => msg.channel.send(`Skynet bot invite link: ${link}`))
                     .catch(console.error);
             }
