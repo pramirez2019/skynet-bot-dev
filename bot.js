@@ -12,11 +12,8 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
 //ENABLE THIS FOR LOCAL TEST ONLY!!!
 //client.login(auth.token);
-
-
 
 //client.on means the bot is listening
 client.on('message', msg => {
@@ -43,7 +40,7 @@ client.on('message', msg => {
             } else if (args[0] === 'play') {
                 return msg.reply('Lets play! <:eymario:558854493567975435>');
             } else if (args[0] === 'lup') {
-                return msg.channel.send(`You leveled up, hype!!! ${msg.author}!`);
+                return msg.channel.send(`You leveled up, hype!!!  :sunglasses:  ${msg.author}!`);
             } else if (args[0] === 'ping') {
                 const taggedUser = msg.mentions.users.first();
                 if (!msg.mentions.users.size) {
@@ -57,7 +54,7 @@ client.on('message', msg => {
         if (command === 'tags') {
             //args  variable only have the word ! because we split
             if (!args.length) {  
-                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+                return msg.channel.send(`Please provide any arguments ${msg.author}!\nArguments: gamertags, pcgames, ps4games, switchgames\nExample: !tags + ARGUMENT.`);
             } else if (args[0] === 'gamertags') {
                 return msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
             } else if (args[0] === 'pcgames') {
@@ -74,7 +71,7 @@ client.on('message', msg => {
         if (command === 'info') {  
             //args  variable only have the word ! because we split
             if (!args.length) {  
-                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+                return msg.channel.send(`Please provide any arguments ${msg.author}!\nArguments: user, discord, server\nExample: !info + ARGUMENT.`);
             } else if (args[0] === 'user') {
                 return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
             } else if (args[0] === 'discord') {
@@ -89,7 +86,7 @@ client.on('message', msg => {
         if (command === 'admin') {  
             //args  variable only have the word ! because we split
             if (!args.length) {  
-                return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+                return msg.channel.send(`Please provide any arguments ${msg.author}!\nArguments: ping, delete, bulk, botinvite\nExample: !admin + ARGUMENT.`);
             } else if (args[0] === 'ping') {
                 msg.channel.send('Im here human, what do you need?');
             } else if (args[0] === 'delete') {
@@ -106,12 +103,10 @@ client.on('message', msg => {
             msg.channel.send(`This argument is incorrect for admin command, try again human: ${args[0]}`);
         }
 
-    }
-        
-    
+    }        
 })
-
-ENABLE THIS FOR WEB SERVICE ONLY!!!
+ 
+//ENABLE THIS FOR WEB SERVICE ONLY!!!
 // THIS  MUST  BE  THIS  WAY
 // login to Discord with your app's token
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
