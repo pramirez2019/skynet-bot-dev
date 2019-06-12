@@ -46,6 +46,24 @@ client.on('message', msg => {
             }
                msg.channel.send(`This argument is incorrect for dbd command, try again human: ${args[0]}`);
            }
+	    
+	    if (command === 'tags') {  //Command variable only have the word 'arg-info' because we shift.
+              if (!args.length) {  //args  variable only have the word ! because we split
+                  return msg.channel.send(`Please provide any arguments, ask Skynet !skynet-info... ${msg.author}!`);
+              } else if (args[0] === 'gamertags') {
+                 return msg.reply('PSN:patricio_tv, Steam: reloadedantrax, Nintendo Switch: SW-0279-1159-3994 <:eymario:558854493567975435>');
+              } else if (args[0] === '!pcgames') {
+                return msg.channel.send(`You leveled up, hype!!! ${msg.author}!`);
+              } else if (args[0] === 'ps4games' ) {
+                  const taggedUser = msg.mentions.users.first();
+                  if (!msg.mentions.users.size) {
+                    return msg.reply('you need to tag a user in order to kick them!');
+                   }
+                  return msg.channel.send(`Do you want to play some rounds? ${taggedUser.username}`);
+            }
+               msg.channel.send(`This argument is incorrect for dbd command, try again human: ${args[0]}`);
+           }
+	    
     }
 	
     
