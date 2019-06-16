@@ -50,7 +50,7 @@ client.on('message', msg => {
             } else if (args[0] === 'ping') {
                 const taggedUser = msg.mentions.users.first();
                 if (!msg.mentions.users.size) {
-                    return msg.reply('you need to tag a user in order to kick them!');
+                    return msg.reply('Human you need to tag a user in order to use this command');
                 }
                 return msg.channel.send(`Do you want to play some rounds? ${taggedUser.username}`);
             }
