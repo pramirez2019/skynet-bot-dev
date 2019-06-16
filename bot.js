@@ -30,7 +30,7 @@ client.on('message', msg => {
             if (!args.length) {  
                 return msg.channel.send(`Please provide any arguments ${msg.author}\nArguments: dbd, tags, info\nExample: !skynet-info dbd`);
             } else if (args[0] === 'dbd') {
-                return msg.reply('Commands available for "!dbd": play, lup, ping');
+                return msg.reply('Commands available for "!dbd": play, lup, ldown, ping');
             } else if (args[0] === 'tags') {
                 return msg.reply('Commands available for "!tags": gamertags, pcgames, switchgames');
             } else if (args[0] === 'info') {
@@ -47,6 +47,8 @@ client.on('message', msg => {
                 return msg.reply('Lets play! <:eymario:558854493567975435>');
             } else if (args[0] === 'lup') {
                 return msg.channel.send(`You leveled up, hype!!!  :sunglasses:  ${msg.author}!`);
+            } else if (args[0] === 'ldown') {
+                return msg.channel.send(`Rank down, why!!!  :worried:  ${msg.author}!`);
             } else if (args[0] === 'ping') {
                 const taggedUser = msg.mentions.users.first();
                 if (!msg.mentions.users.size) {
