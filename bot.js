@@ -3,7 +3,6 @@ const { prefix } = require('./config.json');//Using prefixes({prefix})stored on 
 const Discord = require('discord.js'); // require the discord.js module
 const client = new Discord.Client(); // create a new Discord client
 client.commands = new Discord.Collection();
-const auth = require('./auth.json');  // Enable this for local testing
 const channel = new Discord.Channel();
 const fs = require('fs'); // fs is Node's native file system module.
 const cooldowns = new Discord.Collection(); //Collection for cooldowns
@@ -14,12 +13,12 @@ const util = require('util')
  /*The fs.readdirSync() method will return an ARRAY of all the file names in that directory,
  e.g. ['ping.js', 'beep.js']. The filter is there to make sure any non-JS files are left out of the array.
  With that array, you can loop over it and dynamically */
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./').filter(file => file.endsWith('.js'));
 
 console.log(`Command read:  ${commandFiles}`);
 //Loading using for all my .js command from commandFiles to file.
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
+	const command = require(`./${file}`);
 	client.commands.set(command.name, command);
 }
 
