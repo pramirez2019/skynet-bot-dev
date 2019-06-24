@@ -40,23 +40,22 @@ client.on('message', msg => {
     //Variable by calling args.shift(), which will take the first element in array and return it while also removing it from the original array(so that you dont have the command name string inside the args array).
 	  const commandName = args.shift().toLowerCase();
 
+/*If there isn't a command with that name, exit early. If there is, .get() the command and call its .execute() method while passing
+in your msg and args variables as the method arguments.
+In case something goes wrong, log the error and report back to the member to let them know.
+Whenever you want to add a new command, you simply make a new file in your commands directory, name it what you want, and
+then do what you did for the other commands.*/
+   if (!client.commands.has(commandName)) return;
 
-    /*If there isn't a command with that name, exit early. If there is, .get() the command and call its .execute() method while passing
-		in your msg and args variables as the method arguments.
-		In case something goes wrong, log the error and report back to the member to let them know.
-		Whenever you want to add a new command, you simply make a new file in your commands directory, name it what you want, and
-		then do what you did for the other commands.*/
-		if (!client.commands.has(commandName)) return;
+   //Loading the commands on command variable using get and later execute
+   const command = client.commands.get(commandName);
 
-		 //Loading the commands on command variable using get and later execute
-		const command = client.commands.get(commandName);
+    if (!msg.content.startsWith(prefix) || !msg.author.bot) {  // ||or && and ! not
 
-		if (!msg.content.startsWith(prefix) || !msg.author.bot) {  // ||or && and ! not
-
-			 //Remember command.name is a property of the object. You need to declare it in the module to avoid undefined
-				if (!cooldowns.has(command.name)) {
-						cooldowns.set(command.name, new Discord.Collection());
-				}
+   //Remember command.name is a property of the object. You need to declare it in the module to avoid undefined
+   if (!cooldowns.has(command.name)) {
+	  cooldowns.set(command.name, new Discord.Collection());
+   }
 				// Now variable with the current time
 				const now = Date.now();
 				// .Get()s The Collection for the triggered command.
