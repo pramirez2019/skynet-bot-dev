@@ -8,7 +8,6 @@ const channel = new Discord.Channel();
 const fs = require('fs'); // fs is Node's native file system module.
 const cooldowns = new Discord.Collection(); //Collection for cooldowns
 const util = require('util')
-const extralifeapi = require('extra-life-api');
 //const greatings = require('./commands/greetings.js'); //Calling the greetings.js module. and assigning to variable Testing only
 //const pong = require('./commands/pong.js');
 
