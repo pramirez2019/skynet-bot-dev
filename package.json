@@ -15,20 +15,3 @@
   "keywords": [],
   "license": "ISC"
 }
-
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "extra-life-api",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ammuench/extra-life-api.git"
-  },
-  "scripts": {
-    "build": "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
-    "clean": "rimraf lib",
-    "demo": "npm run build && node dist/demo.js",
-    "lint": "tslint --force --format verbose \"src/**/*.ts\""
-  },
-  "typings": "dist/index.d.ts",
-  "version": "6.0.0"
-}
