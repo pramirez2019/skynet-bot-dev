@@ -10,7 +10,7 @@ module.exports = {
 	args: true,
 	usage: '+ <ARGUMENT>',
 	arguments: '<user>, <discord>,<server>',
-	execute(msg, args) {
+	execute(msg, args, client) {
 
 		if (args[0]  === 'info') {
 				//args  variable only have the word ! because we split
