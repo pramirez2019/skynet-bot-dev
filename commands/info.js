@@ -14,16 +14,16 @@ module.exports = {
 
 		if (args[0]  === 'info') {
 				//args  variable only have the word ! because we split
-			if (args[0] === 'user') {
+		}else if (args[0] === 'user') {
 						return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
-				} else if (args[0] === 'discord') {
+		} else if (args[0] === 'discord') {
 						client.fetchInvite('https://discord.gg/5FTJFDt');
 						return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: `);
-				} else if (args[0] === 'server') {
+		} else if (args[0] === 'server') {
 						return msg.channel.send(`Server's name is: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
-				}
-			//	msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
 		}
+			//	msg.channel.send(`This argument is incorrect for info command, try again human: ${args[0]}`);
+		
 	}
 };
 
