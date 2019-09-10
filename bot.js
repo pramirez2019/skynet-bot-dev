@@ -8,6 +8,7 @@ const channel = new Discord.Channel();
 const fs = require('fs'); // fs is Node's native file system module.
 const cooldowns = new Discord.Collection(); //Collection for cooldowns
 const util = require('util')
+
 //const greatings = require('./commands/greetings.js'); //Calling the greetings.js module. and assigning to variable Testing only
 //const pong = require('./commands/pong.js');
 
@@ -111,5 +112,3 @@ client.on('message', msg => {
 // THIS  MUST  BE  THIS  WAY
 // login to Discord with your app's token
 client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
-
-
