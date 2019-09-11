@@ -20,7 +20,7 @@ module.exports = {
 		} else if(args[0] === 'userembed'){
 			const userembed = new Discord.RichEmbed()
 	      .setColor('#0099ff')
-	      .setTitle('Member information')
+	      .setTitle(`${msg.author.username} information`)
 				.setURL('https://discord.js.org/')
 	      .setAuthor(`User name: ${msg.author.username}`)
       	.setDescription(`User id: ${msg.author.id}`)
