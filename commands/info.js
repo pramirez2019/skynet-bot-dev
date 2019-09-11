@@ -10,7 +10,7 @@ module.exports = {
 	//whenever you set args to true in one of your command files, it'll perform this check and supply feedback if necessary.
 	args: true,
 	usage: '+ <ARGUMENT>',
-	arguments: '<user>, <discord>,<server>',
+	arguments: '<user>, <discord>, <server>',
 	execute(msg, args, client) {
 
 		if (args[0]  === 'info') {
@@ -21,6 +21,7 @@ module.exports = {
 			const userembed = new Discord.RichEmbed()
 	      .setColor('#0099ff')
 	      .setTitle('Member information')
+				.setURL('https://discord.js.org/')
 	      .setAuthor(`User name: ${msg.author.username}`)
       	.setDescription(`User id: ${msg.author.id}`)
 	      .setThumbnail(`${msg.author.displayAvatarURL}`)
