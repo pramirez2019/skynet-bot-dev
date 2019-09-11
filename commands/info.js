@@ -22,7 +22,7 @@ module.exports = {
 	      .setTitle(`${msg.author.username} information`)
 	      .setAuthor(`User name:${msg.author.username}`)
       	.setDescription(`User id:${msg.author.id}`)
-	      .setThumbnail(`${msg.author.defaultAvatarURL}`)
+	      .setThumbnail(``)
 				.addBlankField()
 				.setTimestamp()
 	      .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
