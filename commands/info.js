@@ -17,7 +17,16 @@ module.exports = {
 		}else if (args[0] === 'user') {
 						return msg.channel.send(`Your username: ${msg.author.username}\nYour ID: ${msg.author.id}`);
 		} else if(args[0] === 'userembed'){
-			
+			const userembed = new Discord.RichEmbed()
+	      .setColor('#0099ff')
+	      .setTitle(`${msg.author.username} information`)
+	      .setAuthor(`User name:${msg.author.username}`)
+      	.setDescription(`User id:${msg.author.id}`)
+	      .setThumbnail(`${msg.author.DisplayavatarURL}`)
+				.addBlankField()
+				.setTimestamp()
+	      .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+				return msg.channel.send(userembed);
 		}	else if (args[0] === 'discord') {
 						client.fetchInvite('https://discord.gg/5FTJFDt');
 						return msg.channel.send(`Join our machines army with this invitation: https://discord.gg/5FTJFDt \nCode: `);
