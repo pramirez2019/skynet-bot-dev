@@ -21,7 +21,6 @@ module.exports = {
 			const userembed = new Discord.RichEmbed()
 	      .setColor('#0099ff')
 	      .setTitle(`${msg.author.username} information`)
-				.setURL('https://discord.js.org/')
 	      .setAuthor(`User name: ${msg.author.username}`)
       	.setDescription(`User id: ${msg.author.id}`)
 	      .setThumbnail(`${msg.author.displayAvatarURL}`)
