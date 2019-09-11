@@ -1,4 +1,5 @@
 const { prefix } = require('../config.json'); // config.json is one folfer up ..
+const Discord = require('discord.js');
 
 module.exports = {
  //name:, cooldown:, args: and description: are properties of the object. They are important to use on the main file.
