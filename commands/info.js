@@ -20,9 +20,9 @@ module.exports = {
 		} else if(args[0] === 'userembed'){
 			const userembed = new Discord.RichEmbed()
 	      .setColor('#0099ff')
-	      .setTitle(`Member information`)
-	      .setAuthor(`User name:${msg.author.username}`)
-      	.setDescription(`User id:${msg.author.id}`)
+	      .setTitle('Member information')
+	      .setAuthor(`User name: ${msg.author.username}`)
+      	.setDescription(`User id: ${msg.author.id}`)
 	      .setThumbnail(`${msg.author.displayAvatarURL}`)
 				.addBlankField()
 				.setTimestamp()
